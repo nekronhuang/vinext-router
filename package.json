@@ -1,0 +1,34 @@
+{
+  "name": "vinext-router",
+  "version": "0.1.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "DEBUG=vinext:* nodemon start --exec 'npm run lint && node'",
+    "business": "nodemon ./demo/server.js"
+  },
+  "author": "nekron.hyt@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "debug": "^2.2.0",
+    "koa": "^2.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^1.1.3",
+    "koa-logger": "^1.3.0",
+    "koa-onerror": "^1.3.1",
+    "koa-router": "^7.0.1",
+    "thrift": "^0.9.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.0.5",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-3": "^6.5.0",
+    "eslint": "^2.13.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "nodemon": "^1.9.2"
+  }
+}
