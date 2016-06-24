@@ -14,6 +14,15 @@ onerror(app)
 
 app.use(convert(json()))
 app.use(convert(logger()))
+app.use((ctx, next) => {
+  ctx.set('Access-Control-Allow-Origin', ctx.get('Origin'))
+  ctx.set('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE')
+  ctx.set('Access-Control-Allow-Headers', ctx.get('access-control-request-headers'))
+  if (ctx.method === 'OPTIONS') {
+    ctx.status = 204
+  }
+  return next()
+})
 
 app.use(routers.routes(), routers.allowedMethods())
 

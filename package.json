@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "DEBUG=vinext:* nodemon start --exec 'npm run lint && node'",
-    "business": "nodemon ./demo/server.js"
+    "business": "nodemon ./demo/server.js",
+    "test": "mocha -u bdd"
   },
   "author": "nekron.hyt@gmail.com",
   "license": "ISC",
@@ -29,6 +30,9 @@
     "babel-preset-stage-3": "^6.5.0",
     "eslint": "^2.13.1",
     "eslint-plugin-babel": "^3.3.0",
-    "nodemon": "^1.9.2"
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2",
+    "should": "^9.0.2",
+    "supertest": "^1.2.0"
   }
 }

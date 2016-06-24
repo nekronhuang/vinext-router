@@ -38,13 +38,16 @@ vinext-router
 │   └───server
 │       │   ... 服务器配置参数
 │
+└───test
+│   │   ... 测试文件
+│
 └───thrift_desc
 │   │   ... thrift描述文件
 │
 └───demo
 │   │   ... 业务服务器样例
 │
-└───app.js 中间件 配置
+└───app.js 中间件配置
 │
 └───start.js 启动文件
 ```
