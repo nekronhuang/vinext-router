@@ -4,6 +4,8 @@ const transport = thrift.TBufferedTransport()
 const protocol = thrift.TBinaryProtocol()
 /* eslint-enable */
 
+const log = require('debug')('vinext:thriftconn')
+
 class ThriftConn {
   constructor(addr, type) {
     if (/\w+:\d+/.test(addr)) {
@@ -21,6 +23,7 @@ class ThriftConn {
   _connect() {
     this.conn = thrift.createConnection(this.host, this.port, { transport, protocol })
     this.client = thrift.createClient(this.type, this.conn)
+    this.conn.on('error', log)
   }
 }
 
