@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "DEBUG=vinext:* nodemon start --exec 'npm run lint && node'",
-    "business": "nodemon ./demo/server.js",
+    "business-node": "nodemon ./demo/server.js",
+    "business-go": "go run ./demo/server.go",
     "test": "mocha -u bdd"
   },
   "author": "nekron.hyt@gmail.com",

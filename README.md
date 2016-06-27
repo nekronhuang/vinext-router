@@ -10,14 +10,32 @@ Some future projects of [Videojj](http://videojj.com) will name after `vinext`.
 
 ## Quick start
 
+#### business-node
+```bash
+$ cd thrift_desc
+$ thrift -gen js:node *.thrift
+```
+
+#### business-go
+```bash
+$ cd thrift_desc
+# important! everything on web is fucking useless
+$ thrift -gen go:thrift_import=git-wip-us.apache.org/repos/asf/thrift.git/lib/go/thrift *.thrift
+```
+
 ### develop
 
 ```bash
 # install dependecies
 $ npm install
+$ go get git-wip-us.apache.org/repos/asf/thrift.git/lib/go/thrift
 
 # start business server
-$ npm run business
+# 1) node server
+$ npm run business-node
+
+# 2) golang server
+$ npm run business-go
 
 # start router server
 $ npm start
