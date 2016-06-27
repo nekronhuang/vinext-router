@@ -5,9 +5,11 @@ const ThriftConn = require('../../utils/thriftConn')
 const App = require('../../thrift_desc/gen-nodejs/AppService')
 // const UserType = require('../../thrift_desc/gen-nodejs/user_types')
 
-const client = new ThriftConn('127.0.0.1:9091', App).client
+const Conn = new ThriftConn('127.0.0.1:9091', App)
 
 router.get('/me', (ctx, next) => {
+  const client = Conn.client
+
   return client.getMe().then((doc) => {
     log(doc)
     ctx.status = doc.status
