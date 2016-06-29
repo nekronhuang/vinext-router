@@ -4,8 +4,9 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const logger = require('koa-logger')
 
-// const log = require('debug')('vinext:app')
 global.Promise = require('bluebird')
+
+const log = require('debug')('vinext:app')
 const routers = require('./config/routers')
 
 const app = new Koa()
@@ -21,6 +22,10 @@ app.use((ctx, next) => {
   if (ctx.method === 'OPTIONS') {
     ctx.status = 204
   }
+  return next()
+})
+app.use((ctx, next) => {
+  log(ctx.request.header['cache-control'])
   return next()
 })
 
